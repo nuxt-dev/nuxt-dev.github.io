@@ -9,7 +9,8 @@ services:
       - 8080:80
     extra_hosts:
       - host.docker.internal:host-gateway
-#    volumes:
-#      - ./dist:/usr/share/nginx/html
+    volumes:
+      - ./dist:/usr/share/nginx/html
+      - ./.output/public:/usr/share/nginx/html # npm run generate
     environment:
       - TZ=${TIME_ZONE:-Asia/Shanghai}
