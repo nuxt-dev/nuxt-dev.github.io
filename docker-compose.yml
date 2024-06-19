@@ -6,10 +6,10 @@ services:
     restart: on-failure
     hostname: official-website
     ports:
-      - 80:8080
+      - 8080:80
     extra_hosts:
       - host.docker.internal:host-gateway
-    volumes:
-      - ./dist:/usr/share/nginx/html
+#    volumes:
+#      - ./dist:/usr/share/nginx/html
     environment:
       - TZ=${TIME_ZONE:-Asia/Shanghai}
