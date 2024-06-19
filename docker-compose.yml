@@ -2,7 +2,7 @@
 services:
 
   official-website:
-    image: nginx:1.23.3-alpine
+    image: ${REGISTRY_REPO}nginx:1.23.3-alpine
     restart: on-failure
     hostname: official-website
     ports:
