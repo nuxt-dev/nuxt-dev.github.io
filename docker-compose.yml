@@ -2,6 +2,7 @@
 services:
 
   official-website:
+    container_name: official-website
     image: ${MIRROR_REGISTRY_REPO}nginx:1.23.3-alpine
     restart: on-failure
     hostname: official-website
