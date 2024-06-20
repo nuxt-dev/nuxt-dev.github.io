@@ -1,17 +1,30 @@
 # 服务
 services:
 
-  official-website:
-    container_name: official-website
+  official-website-dev:
+    container_name: official-website-dev
     image: ${MIRROR_REGISTRY_REPO}nginx:1.23.3-alpine
     restart: on-failure
-    hostname: official-website
+    hostname: official-website-dev
     ports:
       - 8080:80
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
       - ./dist:/usr/share/nginx/html
-      # - ./.output/public:/usr/share/nginx/html # npm run generate
+    environment:
+      - TZ=${TIME_ZONE:-Asia/Shanghai}
+
+  official-website-ssg:
+    container_name: official-website-ssg
+    image: ${MIRROR_REGISTRY_REPO}nginx:1.23.3-alpine
+    restart: on-failure
+    hostname: official-website-ssg
+    ports:
+      - 8081:80
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    volumes:
+      - ./.output/public:/usr/share/nginx/html # npm run generate
     environment:
       - TZ=${TIME_ZONE:-Asia/Shanghai}
