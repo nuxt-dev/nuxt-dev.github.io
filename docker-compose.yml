@@ -1,6 +1,7 @@
 # 服务
 services:
 
+  # docker-compose up -d official-website-dev
   official-website-dev:
     container_name: official-website-dev
     image: ${MIRROR_REGISTRY_REPO}nginx:1.23.3-alpine
@@ -15,6 +16,7 @@ services:
     environment:
       - TZ=${TIME_ZONE:-Asia/Shanghai}
 
+  # docker-compose up -d official-website-ssg
   official-website-ssg:
     container_name: official-website-ssg
     image: ${MIRROR_REGISTRY_REPO}nginx:1.23.3-alpine
