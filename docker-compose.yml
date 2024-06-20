@@ -12,6 +12,6 @@ services:
       - host.docker.internal:host-gateway
     volumes:
       - ./dist:/usr/share/nginx/html
-      - ./.output/public:/usr/share/nginx/html # npm run generate
+      # - ./.output/public:/usr/share/nginx/html # npm run generate
     environment:
       - TZ=${TIME_ZONE:-Asia/Shanghai}
