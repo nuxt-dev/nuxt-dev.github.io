@@ -15,4 +15,8 @@ export default defineNuxtConfig({
   },
   routeRules: {},
   devtools: { enabled: true },
+  typescript: {
+    typeCheck: true,
+    // strict: false
+  }
 })
