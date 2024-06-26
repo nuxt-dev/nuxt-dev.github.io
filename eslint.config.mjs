@@ -5,7 +5,8 @@ export default withNuxt(
   // Your custom configs here
   {
     rules: {
-      "quotes": ["error", "double"]
+      "quotes": ["error", "double"],
+      "semi": ['error', 'always']
     },
   }
 )
