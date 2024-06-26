@@ -6,6 +6,10 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 [Nitro](https://github.com/unjs/nitro)
 
+## Issue
+
+[Nuxt + Typescript](https://github.com/fi3ework/vite-plugin-checker/issues/306#issuecomment-2184081185)
+
 ## Create
 
 ```bash
