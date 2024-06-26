@@ -31,12 +31,12 @@
     "license-checker": "license-checker --excludePrivatePackages --production --onlyAllow=\"ISC;BSD-3-Clause;BSD-2-Clause;MIT;Apache-2.0;0BSD;Python-2.0\""
   },
   "dependencies": {
-    "@nuxt/eslint": "^0.3.13",
     "nuxt": "^3.12.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
+    "@nuxt/eslint": "^0.3.13",
     "license-checker": "^25.0.1",
     "prettier": "^3.3.2",
     "typescript": "5.4.4",
