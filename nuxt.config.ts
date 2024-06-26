@@ -32,11 +32,4 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   experimental: {},
-  eslint: {
-    config: {
-      stylistic: {
-        quotes: 'single',
-      },
-    },
-  },
 });
