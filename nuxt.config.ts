@@ -3,16 +3,20 @@ export default defineNuxtConfig({
   runtimeConfig: {},
   app: {
     head: {
-      htmlAttrs: {
-        lang: 'en',
-      },
-      titleTemplate: '%s - Nuxt.js',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      ],
+      // htmlAttrs: {
+      //   lang: 'zh-CN',
+      // },
+      // titleTemplate: '%s - Nuxt.js',
+      // meta: [
+      //   { charset: 'utf-8' },
+      //   { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // ],
     },
   },
-  routeRules: {},
+  routeRules: {
+    // '/': {
+    //   prerender: true,
+    // },
+  },
   devtools: { enabled: true },
 })

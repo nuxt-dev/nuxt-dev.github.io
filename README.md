@@ -33,6 +33,11 @@ Build the application for production:
 npm run build
 ```
 
+[Deploy GitHub Pages](https://nuxt.com/deploy/github-pages)
+```bash
+npx nuxt build --preset github_pages
+```
+
 Locally preview production build:
 
 ```bash
