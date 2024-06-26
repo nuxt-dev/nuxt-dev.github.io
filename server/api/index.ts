@@ -1,1 +1,1 @@
-export default defineEventHandler(() => 'Nuxt API');
+export default defineEventHandler(() => "Nuxt API");

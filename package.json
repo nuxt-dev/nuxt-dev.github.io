@@ -25,9 +25,10 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint .",
+    "lint": "eslint \"{app,modules,server}/**/*.{vue,ts}\"",
+    "lint-fix": "eslint \"{app,modules,server}/**/*.{vue,ts}\" --fix",
     "typecheck": "nuxt typecheck",
-    "format": "prettier --write \"./**/*.ts\"",
+    "format": "prettier --write \"{app,modules,server}/**/*.{ts,vue}\"",
     "license-checker": "license-checker --excludePrivatePackages --production --onlyAllow=\"ISC;BSD-3-Clause;BSD-2-Clause;MIT;Apache-2.0;0BSD;Python-2.0\""
   },
   "dependencies": {
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.3.13",
+    "eslint": "^8.57.0",
     "license-checker": "^25.0.1",
     "prettier": "^3.3.2",
     "typescript": "5.4.4",
