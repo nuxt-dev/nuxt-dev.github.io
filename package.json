@@ -1,6 +1,23 @@
 {
   "name": "official-website",
+  "version": "1.0.0",
+  "description": "Official website for Nuxt.js",
+  "repository": {
+    "type": "git",
+    "url": "https://gitea.rxreader.com/jsf-new/official-website.git"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt.js",
+    "vue",
+    "vue.js",
+    "vuejs"
+  ],
+  "author": {
+    "name": "lin713"
+  },
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "build": "nuxt build",
