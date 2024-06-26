@@ -14,9 +14,21 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {},
-  devtools: { enabled: true },
+  modules: [
+    "@nuxt/eslint",
+  ],
+  devtools: { 
+    enabled: true
+  },
   typescript: {
     typeCheck: true,
     // strict: false
+  },
+  eslint: {
+    config: {
+      stylistic: {
+        quotes: 'single'
+      }
+    }
   }
 })

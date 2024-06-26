@@ -28,6 +28,7 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
+    "@nuxt/eslint": "^0.3.13",
     "nuxt": "^3.12.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
