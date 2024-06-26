@@ -13,10 +13,6 @@ export default defineNuxtConfig({
       // ],
     },
   },
-  routeRules: {
-    // '/': {
-    //   prerender: true,
-    // },
-  },
+  routeRules: {},
   devtools: { enabled: true },
 })
