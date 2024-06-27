@@ -3,12 +3,13 @@
 FROM alpine:latest as download
 
 ENV PB_VERSION 0.22.14
+ENV PB_ARCH amd64
 
 RUN apk add --no-cache \
     unzip \
     ca-certificates
 
-ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
+ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_${PB_ARCH}.zip /tmp/pb.zip
 RUN unzip /tmp/pb.zip -d /pb/
 
 # --- deploy ---
