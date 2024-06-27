@@ -2,8 +2,8 @@
 
 FROM alpine:latest as download
 
-ENV PB_VERSION 0.22.14
-ENV PB_ARCH amd64
+ARG PB_VERSION 0.22.14
+ARG PB_ARCH amd64
 
 RUN apk add --no-cache \
     unzip \
