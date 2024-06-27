@@ -49,6 +49,10 @@ export default defineNuxtConfig({
 
   // ---
 
+  hooks: {},
+
+  // ---
+
   runtimeConfig: {
     app: {},
     nitro: {},

@@ -41,6 +41,9 @@
   "devDependencies": {
     "@nuxt/eslint": "^0.3.13",
     "@nuxt/image": "^1.7.0",
+    "app-store-scraper": "^0.18.0",
+    "cheerio": "^1.0.0-rc.12",
+    "google-play-scraper": "^10.0.0",
     "license-checker": "^25.0.1",
     "prettier": "^3.3.2",
     "typescript": "5.4.4",
