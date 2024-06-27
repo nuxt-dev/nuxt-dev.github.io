@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
       lang: z.string().optional(),
     }).parse,
   );
-  console.log(`Query: ${JSON.stringify(query)}`);
+  // console.log(`Query: ${JSON.stringify(query)}`);
   let data:
     | {
         id?: number;
