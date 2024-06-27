@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // ---
+
   $production: {},
   $development: {},
-  runtimeConfig: {
-    app: {},
-    nitro: {},
-    public: {},
-  },
-  nitro: {
-    // preset: "static",
+
+  // ---
+
+  devtools: {
+    enabled: true,
   },
   app: {
     head: {
@@ -22,25 +22,14 @@ export default defineNuxtConfig({
       // ],
     },
   },
-  routeRules: {},
-  generate: {
-    // routes: [],
-  },
+
+  // ---
+
+  plugins: [],
   modules: [
     "@nuxt/eslint", 
     "@nuxt/image",
   ],
-  devtools: {
-    enabled: true,
-  },
-  typescript: {
-    typeCheck: true,
-    // strict: false
-  },
-  future: {
-    compatibilityVersion: 4,
-  },
-  experimental: {},
   eslint: {
     config: {
       stylistic: {
@@ -48,5 +37,39 @@ export default defineNuxtConfig({
         semi: true,
       },
     },
+  },
+
+  // ---
+
+  alias: {},
+
+  // ---
+
+  runtimeConfig: {
+    app: {},
+    nitro: {},
+    public: {},
+  },
+  appConfig: {},
+  devServer: {},
+  future: {
+    compatibilityVersion: 4,
+  },
+  features: {},
+  experimental: {},
+  generate: {
+    // routes: [],
+  },
+  nitro: {
+    // preset: "static",
+  },
+  routeRules: {},
+  router: {},
+  
+  // ---
+
+  typescript: {
+    typeCheck: true,
+    // strict: false
   },
 });
