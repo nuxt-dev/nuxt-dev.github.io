@@ -39,6 +39,7 @@
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
+    "@types/app-store-scraper": "file:packages/@types/app-store-scraper",
     "@nuxt/eslint": "^0.3.13",
     "@nuxt/image": "^1.7.0",
     "app-store-scraper": "^0.18.0",
