@@ -26,7 +26,10 @@ export default defineNuxtConfig({
   generate: {
     // routes: [],
   },
-  modules: ['@nuxt/eslint'],
+  modules: [
+    "@nuxt/eslint", 
+    "@nuxt/image",
+  ],
   devtools: {
     enabled: true,
   },
