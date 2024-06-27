@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     nitro: {},
     public: {},
   },
+  nitro: {
+    // preset: "static",
+  },
   app: {
     head: {
       // htmlAttrs: {
@@ -20,6 +23,9 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {},
+  generate: {
+    // routes: [],
+  },
   modules: ['@nuxt/eslint'],
   devtools: {
     enabled: true,
