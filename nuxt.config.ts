@@ -38,7 +38,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  image: {},
+  image: {
+    // provider: "static",
+    // static: {},
+  },
 
   // ---
 
