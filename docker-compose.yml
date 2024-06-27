@@ -3,6 +3,20 @@
 # 服务
 services:
 
+  pocketbase:
+    container_name: pocketbase
+    image: pocketbase:0.22.14
+    build:
+      context: ./.docker/pocketbase/
+      args:
+        - PB_VERSION:0.22.14
+    restart: on-failure
+    hostname: pocketbase
+    ports:
+      - 8090:8090
+    volumes:
+      - ./pb/pb_data:/pb/pb_data
+
   # official-website-dev:
   #   container_name: official-website-dev
   #   image: ${MIRROR_REGISTRY_REPO}nginx:1.23.3-alpine
@@ -18,17 +32,17 @@ services:
   #   environment:
   #     - TZ=${TIME_ZONE:-Asia/Shanghai}
 
-  official-website-ssg:
-    container_name: official-website-ssg
-    image: ${MIRROR_REGISTRY_REPO}nginx:1.23.3-alpine
-    restart: on-failure
-    hostname: official-website-ssg
-    ports:
-      - 8080:80
-    extra_hosts:
-      - host.docker.internal:host-gateway
-    volumes:
-      - ./.output/public:/usr/share/nginx/html
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    environment:
-      - TZ=${TIME_ZONE:-Asia/Shanghai}
+  # official-website-ssg:
+  #   container_name: official-website-ssg
+  #   image: ${MIRROR_REGISTRY_REPO}nginx:1.23.3-alpine
+  #   restart: on-failure
+  #   hostname: official-website-ssg
+  #   ports:
+  #     - 8080:80
+  #   extra_hosts:
+  #     - host.docker.internal:host-gateway
+  #   volumes:
+  #     - ./.output/public:/usr/share/nginx/html
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf
+  #   environment:
+  #     - TZ=${TIME_ZONE:-Asia/Shanghai}
