@@ -25,13 +25,13 @@ const androidAppResp = await useFetch(
   "/api/app?platform=android&package_name=com.android.chrome",
 );
 console.log(
-  `appResp: ${androidAppResp.status.value} - ${JSON.stringify(androidAppResp.data.value)}`,
+  `Android App Resp: ${androidAppResp.status.value} - ${JSON.stringify(androidAppResp.data.value)}`,
 );
 
 const iosAppResp = await useFetch(
   "/api/app?platform=ios&package_name=com.google.chrome.ios",
 );
 console.log(
-  `appResp: ${iosAppResp.status.value} - ${JSON.stringify(iosAppResp.data.value)}`,
+  `iOS App Resp: ${iosAppResp.status.value} - ${JSON.stringify(iosAppResp.data.value)}`,
 );
 </script>
