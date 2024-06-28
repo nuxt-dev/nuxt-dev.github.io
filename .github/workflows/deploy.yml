@@ -34,8 +34,8 @@ jobs:
           npm install
       - name: Generate
         run: |
-          # npm run generate
-          npx nuxt build --preset github_pages
+          npm run generate
+          # npx nuxt build --preset github_pages
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
