@@ -1,0 +1,1 @@
+import{_ as e}from"./DlAUqK2U.js";import{c as t,o,a as s}from"./CIJ0cmTa.js";const a={},c=s("p",null,"This page will be displayed at the /about route.",-1),n=[c];function r(_,l){return o(),t("section",null,n)}const p=e(a,[["render",r]]);export{p as default};
