@@ -1,6 +1,6 @@
 import { z } from "zod";
-import * as appstore from "app-store-scraper";
-import * as googleplay from "google-play-scraper";
+import appstore from "app-store-scraper";
+import googleplay from "google-play-scraper";
 
 // const resp = await useFetch("/api/app?platform=android&package_name=com.example.app");
 export default defineEventHandler(async (event) => {
