@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
       break;
     case "ios":
       const iosInfo = await appstore.app({
-        id: query.bundle_id,
+        appId: query.bundle_id,
         country: query.country ?? "us",
         lang: query.lang ?? "en",
       });
