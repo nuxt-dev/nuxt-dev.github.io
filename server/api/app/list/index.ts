@@ -33,6 +33,15 @@ const APPS: {
     ios: {
       bundle_id: "com.google.chrome.ios",
     },
+  },
+  {
+    alias: "firefox",
+    android: {
+      package_name: "org.mozilla.firefox",
+    },
+    ios: {
+      bundle_id: "org.mozilla.ios.Firefox",
+    },
   }
 ];
 
