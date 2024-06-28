@@ -6,12 +6,23 @@ import googleplay from "google-play-scraper";
 export default defineEventHandler(async (event) => {
   const query = await getValidatedQuery(
     event,
-    z.object({
-      platform: z.enum(["android", "ios"]),
-      package_name: z.string(),
-      country: z.string().optional(),
-      lang: z.string().optional(),
-    }).parse,
+    z
+      .discriminatedUnion("platform", [
+        z.object({
+          platform: z.literal("android"),
+          package_name: z.string(),
+        }),
+        z.object({
+          platform: z.literal("ios"),
+          bundle_id: z.string(),
+        }),
+      ])
+      .and(
+        z.object({
+          country: z.string().optional(),
+          lang: z.string().optional(),
+        }),
+      ).parse,
   );
   // console.log(`Query: ${JSON.stringify(query)}`);
   let data:
@@ -43,7 +54,7 @@ export default defineEventHandler(async (event) => {
       break;
     case "ios":
       const iosInfo = await appstore.app({
-        id: query.package_name,
+        id: query.bundle_id,
         country: query.country ?? "us",
         lang: query.lang ?? "en",
       });
