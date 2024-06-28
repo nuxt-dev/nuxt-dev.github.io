@@ -26,10 +26,7 @@ export default defineNuxtConfig({
   // ---
 
   plugins: [],
-  modules: [
-    "@nuxt/eslint", 
-    "@nuxt/image",
-  ],
+  modules: ["@nuxt/eslint", "@nuxt/image"],
   eslint: {
     config: {
       stylistic: {
