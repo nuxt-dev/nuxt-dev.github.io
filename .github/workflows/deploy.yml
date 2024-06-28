@@ -4,7 +4,12 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/workflows/**'
+      - 'README.md'
   workflow_dispatch:
+  # schedule:
+  #   - cron: '0 0 * * *' # 每周日
 
 permissions:
   contents: read
