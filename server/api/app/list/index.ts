@@ -27,16 +27,16 @@ const APPS: {
 }[] = [
   {
     alias: "chrome",
-    // android: {
-    //   package_name: "com.android.chrome",
-    // },
-    // ios: {
-    //   bundle_id: "com.google.chrome.ios",
-    // },
+    android: {
+      package_name: "com.android.chrome",
+    },
+    ios: {
+      bundle_id: "com.google.chrome.ios",
+    },
   }
 ];
 
-assert(APPS.every(app => { app.android || app.ios }), "Invalid APPS");
+assert(APPS.every(app => app.android || app.ios ), "Invalid APPS");
 
 // const resp = await useFetch("/api/app/list");
 // const resp = await useFetch("/api/app/list?platform=android");
