@@ -3,6 +3,7 @@ import appstore from "app-store-scraper";
 import googleplay from "google-play-scraper";
 
 // const resp = await useFetch("/api/app?platform=android&package_name=com.example.app");
+// const resp = await useFetch("/api/app?platform=ios&bundle_id=com.google.chrome.ios");
 export default defineEventHandler(async (event) => {
   const query = await getValidatedQuery(
     event,

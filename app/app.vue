@@ -29,7 +29,7 @@ console.log(
 );
 
 const iosAppResp = await useFetch(
-  "/api/app?platform=ios&package_name=com.google.chrome.ios",
+  "/api/app?platform=ios&bundle_id=com.google.chrome.ios",
 );
 console.log(
   `iOS App Resp: ${iosAppResp.status.value} - ${JSON.stringify(iosAppResp.data.value)}`,
