@@ -70,8 +70,8 @@ export default defineEventHandler(async (event) => {
       };
       break;
   }
-  await event.respondWith(Response.json({ data: data }));
-  // return {
-  //     msg: "Nuxt API",
-  // };
+  // await event.respondWith(Response.json({ data: data }));
+  return {
+    data: data,
+  };
 });
