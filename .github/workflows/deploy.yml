@@ -6,27 +6,26 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  generate:
-    name: Generate on ${{ matrix.os }} with node.js ${{ matrix.node-version }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node-version: [18.x]
-    permissions:
-      contents: write
-      # issues: write # 重写了 permissions，故而需要额外添加 contents 权限，不然 git clone 会失败
-    concurrency:
-      group: ${{ github.ref }}
-      cancel-in-progress: true
+  # Build job
+  build:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "20"
           cache: npm
           cache-dependency-path: package-lock.json
       - name: Install
@@ -34,10 +33,21 @@ jobs:
           npm install
       - name: Generate
         run: |
-          npm run generate
-          # npx nuxt build --preset github_pages
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+          # npm run generate
+          npx nuxt build --preset github_pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: .output/public
-          branch: gh-pages
+          path: ./.output/public
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
