@@ -17,6 +17,9 @@ jobs:
     permissions:
       contents: write
       # issues: write # 重写了 permissions，故而需要额外添加 contents 权限，不然 git clone 会失败
+    concurrency:
+      group: ${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
