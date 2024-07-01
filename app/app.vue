@@ -36,6 +36,7 @@ console.log(
 // );
 
 const appsResp = await useFetch("/api/app/list");
-console.log(`Apps Resp: ${appsResp.status.value} - ${JSON.stringify(appsResp.data.value)}`);
-
+console.log(
+  `Apps Resp: ${appsResp.status.value} - ${JSON.stringify(appsResp.data.value)}`,
+);
 </script>

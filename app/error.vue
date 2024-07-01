@@ -1,13 +1,13 @@
 <template>
   <NuxtExample>
-    <div class="relative font-sans">
-      <div class="container max-w-200 mx-auto py-10 px-4">
+    <div>
+      <div>
         <h1>{{ error?.message }}</h1>
         There was an error 😱
         <br />
         <button @click="handleError">Clear error</button>
         <br />
-        <NuxtLink class="text-primary" to="/"> Navigate home </NuxtLink>
+        <NuxtLink to="/"> Navigate home </NuxtLink>
       </div>
     </div>
   </NuxtExample>
