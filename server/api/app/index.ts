@@ -28,14 +28,14 @@ export default defineEventHandler(async (event) => {
   // console.log(`Query: ${JSON.stringify(query)}`);
   let data:
     | {
-      id?: number;
-      appId: string;
-      title: string;
-      icon: string;
-      description: string;
-      version: string;
-      url: string;
-    }
+        id?: number;
+        appId: string;
+        title: string;
+        icon: string;
+        description: string;
+        version: string;
+        url: string;
+      }
     | undefined;
   switch (query.platform) {
     case "android":

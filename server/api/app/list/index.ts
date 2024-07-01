@@ -33,7 +33,7 @@ const APPS: {
 ];
 
 assert(
-  APPS.every(app => app.android || app.ios),
+  APPS.every((app) => app.android || app.ios),
   "Invalid APPS",
 );
 
@@ -55,10 +55,10 @@ export default defineEventHandler(async (event) => {
       ).parse,
   );
   const apps = APPS.filter(
-    app =>
-      !query.platform
-      || (query.platform === "android" && app.android)
-      || (query.platform === "ios" && app.ios),
+    (app) =>
+      !query.platform ||
+      (query.platform === "android" && app.android) ||
+      (query.platform === "ios" && app.ios),
   );
   // console.log(`Query: ${JSON.stringify(query)}`);
   const data: {
@@ -102,8 +102,7 @@ export default defineEventHandler(async (event) => {
             }
           : {}),
       });
-    }
-    else if (app.android) {
+    } else if (app.android) {
       const info = await googleplay.app({
         appId: app.android.package_name,
         country: query.country ?? "us",
