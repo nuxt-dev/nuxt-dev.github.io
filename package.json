@@ -27,8 +27,6 @@
     "postinstall": "nuxt prepare",
     "prelint": "nuxt prepare",
     "lint": "eslint \"{app,modules,server}/**/*.{vue,ts}\"",
-    "prelint-fix": "nuxt prepare",
-    "lint-fix": "eslint \"{app,modules,server}/**/*.{vue,ts}\" --fix",
     "typecheck": "nuxt typecheck",
     "format": "prettier --write \"{app,modules,server}/**/*.{ts,vue}\"",
     "license-checker": "license-checker --excludePrivatePackages --production --onlyAllow=\"ISC;BSD-3-Clause;BSD-2-Clause;MIT;Apache-2.0;0BSD;Python-2.0\""
