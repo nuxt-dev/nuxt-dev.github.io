@@ -1,10 +1,7 @@
-import { z } from "zod";
 import assert from "assert";
+import { z } from "zod";
 import appstore from "app-store-scraper";
 import googleplay from "google-play-scraper";
-
-const ANDROID_PACKAGE_NAME_LIST = ["com.android.chrome"];
-const IOS_BUNDLE_ID_LIST = ["com.google.chrome.ios"];
 
 const APPS: {
   alias: string;
@@ -36,7 +33,7 @@ const APPS: {
 ];
 
 assert(
-  APPS.every((app) => app.android || app.ios),
+  APPS.every(app => app.android || app.ios),
   "Invalid APPS",
 );
 
@@ -58,13 +55,13 @@ export default defineEventHandler(async (event) => {
       ).parse,
   );
   const apps = APPS.filter(
-    (app) =>
-      !query.platform ||
-      (query.platform === "android" && app.android) ||
-      (query.platform === "ios" && app.ios),
+    app =>
+      !query.platform
+      || (query.platform === "android" && app.android)
+      || (query.platform === "ios" && app.ios),
   );
   // console.log(`Query: ${JSON.stringify(query)}`);
-  let data: {
+  const data: {
     alias: string;
     title: string;
     icon: string;
@@ -105,7 +102,8 @@ export default defineEventHandler(async (event) => {
             }
           : {}),
       });
-    } else if (app.android) {
+    }
+    else if (app.android) {
       const info = await googleplay.app({
         appId: app.android.package_name,
         country: query.country ?? "us",

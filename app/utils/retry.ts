@@ -38,23 +38,25 @@ export class RetryOptions {
     while (true) {
       try {
         return await fn();
-      } catch (e) {
+      }
+      catch (e) {
         if (e instanceof Error) {
           if (
-            attempt >= this.maxAttempts - 1 ||
-            (options?.retryIf != null && !(await options.retryIf(attempt, e)))
+            attempt >= this.maxAttempts - 1
+            || (options?.retryIf != null && !(await options.retryIf(attempt, e)))
           ) {
             throw e;
           }
           if (options?.onRetry != null) {
             await options.onRetry(attempt, e);
           }
-        } else {
+        }
+        else {
           throw e;
         }
       }
       attempt++;
-      await new Promise((resolve) => setTimeout(resolve, this.delay(attempt)));
+      await new Promise(resolve => setTimeout(resolve, this.delay(attempt)));
     }
   }
 }
