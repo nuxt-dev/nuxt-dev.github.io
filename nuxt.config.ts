@@ -79,4 +79,8 @@ export default defineNuxtConfig({
     typeCheck: true,
     // strict: false
   },
+
+  // ---
+
+  vite: {},
 });

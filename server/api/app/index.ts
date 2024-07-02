@@ -27,13 +27,18 @@ export default defineEventHandler(async (event) => {
   );
   // console.log(`Query: ${JSON.stringify(query)}`);
   let data: {
-    id?: number;
-    appId: string;
     title: string;
     icon: string;
     description: string;
-    version: string;
-    url: string;
+    android?: {
+      package_name: string;
+      url: string;
+    };
+    ios?: {
+      id: number;
+      bundle_id: string;
+      url: string;
+    };
   };
   switch (query.platform) {
     case "android":
@@ -43,12 +48,13 @@ export default defineEventHandler(async (event) => {
         lang: query.lang ?? "en",
       });
       data = {
-        appId: androidInfo.appId,
         title: androidInfo.title,
         icon: androidInfo.icon,
         description: androidInfo.description,
-        version: androidInfo.version,
-        url: androidInfo.url,
+        android: {
+          package_name: androidInfo.appId,
+          url: androidInfo.url,
+        },
       };
       break;
     case "ios":
@@ -58,13 +64,13 @@ export default defineEventHandler(async (event) => {
         lang: query.lang ?? "en",
       });
       data = {
-        id: iosInfo.id,
-        appId: iosInfo.appId,
         title: iosInfo.title,
         icon: iosInfo.icon,
         description: iosInfo.description,
-        version: iosInfo.version,
-        url: iosInfo.url,
+        ios: {
+          bundle_id: iosInfo.appId,
+          url: iosInfo.url,
+        },
       };
       break;
   }
