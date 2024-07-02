@@ -68,6 +68,7 @@ export default defineEventHandler(async (event) => {
         icon: iosInfo.icon,
         description: iosInfo.description,
         ios: {
+          id: iosInfo.id,
           bundle_id: iosInfo.appId,
           url: iosInfo.url,
         },
