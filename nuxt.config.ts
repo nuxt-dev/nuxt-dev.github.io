@@ -13,13 +13,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       // htmlAttrs: {
-      //   lang: 'zh-CN',
+      //   lang: "zh-CN",
       // },
-      // titleTemplate: '%s - Nuxt.js',
-      // meta: [
-      //   { charset: 'utf-8' },
-      //   { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      // ],
+      // titleTemplate: "%s - Nuxt.js",
     },
   },
 
@@ -30,10 +26,10 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: {
-        quotes: 'double',
+        quotes: "double",
         semi: true,
         arrowParens: true,
-        braceStyle: '1tbs',
+        braceStyle: "1tbs",
       },
     },
   },
