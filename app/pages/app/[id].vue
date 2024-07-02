@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const route = useRoute()
+// useHead({});
+// useSeoMeta({});
 
-console.log(route.params.id)
+const route = useRoute();
+console.log(route.params.id);
 </script>

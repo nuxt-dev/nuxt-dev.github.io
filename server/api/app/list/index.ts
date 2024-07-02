@@ -2,35 +2,7 @@ import assert from "assert";
 import { z } from "zod";
 import appstore from "app-store-scraper";
 import googleplay from "google-play-scraper";
-
-const APPS: {
-  id: string;
-  android?: {
-    package_name: string;
-  };
-  ios?: {
-    bundle_id: string;
-  };
-}[] = [
-  {
-    id: "chrome",
-    android: {
-      package_name: "com.android.chrome",
-    },
-    ios: {
-      bundle_id: "com.google.chrome.ios",
-    },
-  },
-  {
-    id: "firefox",
-    android: {
-      package_name: "org.mozilla.firefox",
-    },
-    ios: {
-      bundle_id: "org.mozilla.ios.Firefox",
-    },
-  },
-];
+import { APPS } from "../apps";
 
 assert(
   APPS.every((app) => app.android || app.ios),
@@ -92,7 +64,11 @@ export default defineEventHandler(async (event) => {
           ? {
               android: {
                 package_name: app.android.package_name,
-                url: `https://play.google.com/store/apps/details?id=${app.android.package_name}`,
+                url: `https://play.google.com/store/apps/details?${Object.entries({ 
+                  id: app.android.package_name,
+                  hl: query.lang ?? "en",
+                  gl: query.country ?? "us",
+                }).map(([k, v]) => k + "=" + v).join("&")}`,
               },
             }
           : {}),
@@ -110,7 +86,11 @@ export default defineEventHandler(async (event) => {
         description: info.description,
         android: {
           package_name: app.android.package_name,
-          url: `https://play.google.com/store/apps/details?id=${app.android.package_name}`,
+          url: `https://play.google.com/store/apps/details?${Object.entries({ 
+            id: app.android.package_name,
+            hl: query.lang ?? "en",
+            gl: query.country ?? "us",
+          }).map(([k, v]) => k + "=" + v).join("&")}`,
         },
       });
     }
