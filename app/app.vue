@@ -17,9 +17,7 @@ const appConfig = useAppConfig();
 console.log(appConfig.theme);
 
 const apiResp = await useFetch("/api");
-console.log(
-  `apiResp: ${apiResp.status.value} - ${JSON.stringify(apiResp.data.value)}`,
-);
+console.log(`apiResp: ${apiResp.status.value} - ${JSON.stringify(apiResp.data.value)}`);
 
 // const androidAppResp = await useFetch(
 //   "/api/app?platform=android&package_name=com.android.chrome",
@@ -36,7 +34,5 @@ console.log(
 // );
 
 const appsResp = await useFetch("/api/app/list");
-console.log(
-  `Apps Resp: ${appsResp.status.value} - ${JSON.stringify(appsResp.data.value)}`,
-);
+console.log(`Apps Resp: ${appsResp.status.value} - ${JSON.stringify(appsResp.data.value)}`);
 </script>

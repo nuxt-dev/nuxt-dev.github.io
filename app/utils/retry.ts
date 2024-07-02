@@ -4,12 +4,7 @@ export class RetryOptions {
   private readonly maxDelay: number; // 毫秒
   private readonly maxAttempts: number;
 
-  constructor(options?: {
-    delayFactor?: number;
-    randomizationFactor?: number;
-    maxDelay?: number;
-    maxAttempts?: number;
-  }) {
+  constructor(options?: { delayFactor?: number; randomizationFactor?: number; maxDelay?: number; maxAttempts?: number }) {
     this.delayFactor = options?.delayFactor ?? 200;
     this.randomizationFactor = options?.randomizationFactor ?? 0.25;
     this.maxDelay = options?.maxDelay ?? 30 * 1000;
@@ -41,10 +36,7 @@ export class RetryOptions {
         return await fn();
       } catch (e) {
         if (e instanceof Error) {
-          if (
-            attempt >= this.maxAttempts - 1 ||
-            (options?.retryIf != null && !(await options.retryIf(attempt, e)))
-          ) {
+          if (attempt >= this.maxAttempts - 1 || (options?.retryIf != null && !(await options.retryIf(attempt, e)))) {
             throw e;
           }
           if (options?.onRetry != null) {

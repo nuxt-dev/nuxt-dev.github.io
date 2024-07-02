@@ -54,12 +54,7 @@ export default defineEventHandler(async (event) => {
         }),
       ).parse,
   );
-  const apps = APPS.filter(
-    (app) =>
-      !query.platform ||
-      (query.platform === "android" && app.android) ||
-      (query.platform === "ios" && app.ios),
-  );
+  const apps = APPS.filter((app) => !query.platform || (query.platform === "android" && app.android) || (query.platform === "ios" && app.ios));
   // console.log(`Query: ${JSON.stringify(query)}`);
   const data: {
     alias: string;

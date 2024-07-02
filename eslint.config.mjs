@@ -7,7 +7,6 @@ export default withNuxt(
     rules: {
       // "quotes": ["error", "double"],
       // "semi": ['error', 'always']
-      // "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
       "vue/html-self-closing": [
         "error",
         {
