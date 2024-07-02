@@ -4,6 +4,7 @@ import appstore from "app-store-scraper";
 import googleplay from "google-play-scraper";
 
 const APPS: {
+  id: string;
   android?: {
     package_name: string;
   };
@@ -12,6 +13,7 @@ const APPS: {
   };
 }[] = [
   {
+    id: "chrome",
     android: {
       package_name: "com.android.chrome",
     },
@@ -20,6 +22,7 @@ const APPS: {
     },
   },
   {
+    id: "firefox",
     android: {
       package_name: "org.mozilla.firefox",
     },
@@ -54,6 +57,7 @@ export default defineEventHandler(async (event) => {
   const apps = APPS.filter((app) => !query.platform || (query.platform === "android" && app.android) || (query.platform === "ios" && app.ios));
   // console.log(`Query: ${JSON.stringify(query)}`);
   const data: {
+    id: string;
     title: string;
     icon: string;
     description: string;
@@ -75,6 +79,7 @@ export default defineEventHandler(async (event) => {
         lang: query.lang ?? "en",
       });
       data.push({
+        id: app.id,
         title: info.title,
         icon: info.icon,
         description: info.description,
@@ -99,6 +104,7 @@ export default defineEventHandler(async (event) => {
         lang: query.lang ?? "en",
       });
       data.push({
+        id: app.id,
         title: info.title,
         icon: info.icon,
         description: info.description,
