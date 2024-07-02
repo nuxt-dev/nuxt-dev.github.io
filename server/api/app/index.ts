@@ -26,17 +26,15 @@ export default defineEventHandler(async (event) => {
       ).parse,
   );
   // console.log(`Query: ${JSON.stringify(query)}`);
-  let data:
-    | {
-        id?: number;
-        appId: string;
-        title: string;
-        icon: string;
-        description: string;
-        version: string;
-        url: string;
-      }
-    | undefined;
+  let data: {
+    id?: number;
+    appId: string;
+    title: string;
+    icon: string;
+    description: string;
+    version: string;
+    url: string;
+  };
   switch (query.platform) {
     case "android": {
       const androidInfo = await googleplay.app({

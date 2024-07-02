@@ -5,8 +5,6 @@ export default withNuxt(
   // Your custom configs here
   {
     rules: {
-      // "quotes": ["error", "double"],
-      // "semi": ['error', 'always']
       "vue/html-self-closing": [
         "error",
         {
@@ -20,7 +18,6 @@ export default withNuxt(
         },
       ],
       "vue/singleline-html-element-content-newline": "off",
-      // "vue/multiline-html-element-content-newline": "off",
     },
   }
 )
