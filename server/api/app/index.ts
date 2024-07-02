@@ -36,7 +36,7 @@ export default defineEventHandler(async (event) => {
     url: string;
   };
   switch (query.platform) {
-    case "android": {
+    case "android":
       const androidInfo = await googleplay.app({
         appId: query.package_name,
         country: query.country ?? "us",
@@ -51,8 +51,7 @@ export default defineEventHandler(async (event) => {
         url: androidInfo.url,
       };
       break;
-    }
-    case "ios": {
+    case "ios":
       const iosInfo = await appstore.app({
         appId: query.bundle_id,
         country: query.country ?? "us",
@@ -68,7 +67,6 @@ export default defineEventHandler(async (event) => {
         url: iosInfo.url,
       };
       break;
-    }
   }
   // await event.respondWith(Response.json({ data: data }));
   return {
