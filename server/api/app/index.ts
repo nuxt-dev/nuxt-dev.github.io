@@ -76,7 +76,5 @@ export default defineEventHandler(async (event) => {
       break;
   }
   // await event.respondWith(Response.json({ data: data }));
-  return {
-    data: data,
-  };
+  return data;
 });
