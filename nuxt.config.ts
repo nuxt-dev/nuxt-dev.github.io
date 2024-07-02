@@ -32,6 +32,7 @@ export default defineNuxtConfig({
       stylistic: {
         quotes: 'double',
         semi: true,
+        arrowParens: true,
       },
     },
   },
