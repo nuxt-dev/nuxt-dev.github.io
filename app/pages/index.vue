@@ -2,16 +2,10 @@
   <div>
     <h1>Welcome to the homepage</h1>
     <AppAlert> This is an auto-imported component </AppAlert>
-    <br/>
+    <br />
     <NuxtImg src="https://www.baidu.com/img/doodlegaokaokaohou_5b0f886d182bfd1761854cb4dfa72fa8.gif" />
-    <br/>
-    <NuxtLink 
-      v-for="app in apps" 
-      :key="app.id"
-      :to="`/app/${app.id}`"
-      >
-      {{ app.title }}<br/>
-    </NuxtLink>
+    <br />
+    <NuxtLink v-for="app in apps" :key="app.id" :to="`/app/${app.id}`"> {{ app.title }}<br /> </NuxtLink>
   </div>
 </template>
 
