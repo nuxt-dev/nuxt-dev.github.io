@@ -62,11 +62,13 @@ export default defineEventHandler(async (event) => {
         ? {
             android: {
               package_name: app.android.package_name,
-              url: `https://play.google.com/store/apps/details?${Object.entries({ 
+              url: `https://play.google.com/store/apps/details?${Object.entries({
                 id: app.android.package_name,
                 hl: query.lang ?? "en",
                 gl: query.country ?? "us",
-              }).map(([k, v]) => k + "=" + v).join("&")}`,
+              })
+                .map(([k, v]) => k + "=" + v)
+                .join("&")}`,
             },
           }
         : {}),
@@ -84,18 +86,18 @@ export default defineEventHandler(async (event) => {
       description: info.description,
       android: {
         package_name: app.android.package_name,
-        url: `https://play.google.com/store/apps/details?${Object.entries({ 
+        url: `https://play.google.com/store/apps/details?${Object.entries({
           id: app.android.package_name,
           hl: query.lang ?? "en",
           gl: query.country ?? "us",
-        }).map(([k, v]) => k + "=" + v).join("&")}`,
+        })
+          .map(([k, v]) => k + "=" + v)
+          .join("&")}`,
       },
     };
   } else {
     throw new Error("Invalid app");
   }
   // await event.respondWith(Response.json({ data: data }));
-  return {
-    data: data,
-  };
+  return data;
 });
