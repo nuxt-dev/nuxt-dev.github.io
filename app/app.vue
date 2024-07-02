@@ -13,9 +13,6 @@
 // useHead({});
 // useSeoMeta({});
 
-const appConfig = useAppConfig();
-console.log(appConfig.theme);
-
 // const apiResp = await useFetch("/api");
 // console.log(`apiResp: ${apiResp.status.value} - ${JSON.stringify(apiResp.data.value)}`);
 

@@ -1,5 +1,1 @@
-export default defineAppConfig({
-  theme: {
-    primaryColor: "#ababab",
-  },
-});
+export default defineAppConfig({});
