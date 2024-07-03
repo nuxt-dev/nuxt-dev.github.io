@@ -14,6 +14,13 @@ export default withNuxt(
           },
         },
       ],
+      "vue/max-attributes-per-line": [
+        "warn",
+        {
+          singleline: 6,
+          multiline: 1,
+        }
+      ],
       "vue/singleline-html-element-content-newline": "off",
     },
   }
