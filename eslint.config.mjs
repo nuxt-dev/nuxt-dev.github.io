@@ -11,11 +11,7 @@ export default withNuxt(
         {
           html: {
             void: "always",
-            // normal: "never",
-            // component: "always",
           },
-          // svg: "always",
-          // math: "always",
         },
       ],
       "vue/singleline-html-element-content-newline": "off",
