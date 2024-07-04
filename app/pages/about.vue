@@ -7,5 +7,6 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "custom",
+  title: "About",
 });
 </script>

@@ -13,6 +13,12 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  title: "Home",
+});
 const { data: apps } = await useFetch("/api/app/list");
 // console.log(`Apps: ${JSON.stringify(apps.value)}`);
+
+const route = useRoute();
+console.log(route.meta.title);
 </script>
