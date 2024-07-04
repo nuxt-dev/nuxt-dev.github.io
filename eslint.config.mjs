@@ -10,7 +10,9 @@ export default withNuxt(
         "error",
         {
           html: {
+            normal: "always",
             void: "always",
+            component: "always",
           },
         },
       ],
