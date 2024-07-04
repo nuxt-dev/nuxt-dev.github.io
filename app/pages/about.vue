@@ -5,8 +5,13 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: "About",
+  meta: [
+    { name: 'description', content: 'This is the aboutpage' }
+  ],
+});
 definePageMeta({
   layout: "custom",
-  title: "About",
 });
 </script>
