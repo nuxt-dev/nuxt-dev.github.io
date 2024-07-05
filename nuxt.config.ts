@@ -45,10 +45,7 @@ export default defineNuxtConfig({
     // static: {},
   },
   sitemap: {
-    exclude: [
-      // "/app/**/privacy_policy", 
-      // "/app/**/terms_of_use",
-    ],
+    exclude: [],
   },
   robots: {
     groups: [
