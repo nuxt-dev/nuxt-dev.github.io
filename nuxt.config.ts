@@ -46,8 +46,8 @@ export default defineNuxtConfig({
   },
   sitemap: {
     exclude: [
-      "/app/**/privacy_policy", 
-      "/app/**/terms_of_use",
+      // "/app/**/privacy_policy", 
+      // "/app/**/terms_of_use",
     ],
   },
   robots: {
@@ -55,10 +55,7 @@ export default defineNuxtConfig({
       {
         comment: ["Allow all bots to crawl all content"],
         userAgent:["*"],
-        disallow: [
-          "/app/**/privacy_policy", 
-          "/app/**/terms_of_use",
-        ],
+        disallow: ["/*?*"],
         allow: ["/"],
       },
     ],
