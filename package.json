@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.7.0",
+    "@nuxtjs/robots": "^3.0.0",
     "nuxt": "^3.12.2",
-    "nuxt-og-image": "^3.0.0-rc.56",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },

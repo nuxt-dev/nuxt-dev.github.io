@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   // ---
 
   plugins: [],
-  modules: ["@nuxt/eslint", "@nuxt/image", "nuxt-og-image"],
+  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxtjs/robots"],
   eslint: {
     config: {
       stylistic: {
@@ -39,6 +39,7 @@ export default defineNuxtConfig({
     // provider: "static",
     // static: {},
   },
+  // robots: {},
 
   // ---
 
