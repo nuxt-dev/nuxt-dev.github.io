@@ -56,7 +56,6 @@ export default defineNuxtConfig({
         comment: ["Allow all bots to crawl all content"],
         userAgent:["*"],
         disallow: [
-          "/*?*",
           "/app/*/privacy_policy",
           "/app/*/terms_of_use",
         ],
