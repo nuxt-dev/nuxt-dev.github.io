@@ -18,17 +18,17 @@ export default defineEventHandler(async (event) => {
         }),
       ).parse,
   );
-  const runtimeConfig = useRuntimeConfig();
-  const apps = runtimeConfig.crossApps as {
+  const appConfig = useAppConfig();
+  const myApps = appConfig.apps as {
     id: string;
     android?: { package_name: string };
     ios?: { bundle_id: string };
   }[];
   assert(
-    apps.every((app) => app.android || app.ios),
+    myApps.every((app) => app.android || app.ios),
     "Invalid APPS",
   );
-  const app = apps.find((app) => app.id === query.id);
+  const app = myApps.find((app) => app.id === query.id);
   assert(app, "Invalid ID");
   // console.log(`Query: ${JSON.stringify(query)}`);
   let data: {

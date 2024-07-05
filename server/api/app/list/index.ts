@@ -20,17 +20,17 @@ export default defineEventHandler(async (event) => {
         }),
       ).parse,
   );
-  const runtimeConfig = useRuntimeConfig();
-  const crossApps = runtimeConfig.crossApps as {
+  const appConfig = useAppConfig();
+  const myApps = appConfig.apps as {
     id: string;
     android?: { package_name: string };
     ios?: { bundle_id: string };
   }[];
   assert(
-    crossApps.every((app) => app.android || app.ios),
+    myApps.every((app) => app.android || app.ios),
     "Invalid APPS",
   );
-  const apps = crossApps.filter((app) => !query.platform || (query.platform === "android" && app.android) || (query.platform === "ios" && app.ios));
+  const apps = myApps.filter((app) => !query.platform || (query.platform === "android" && app.android) || (query.platform === "ios" && app.ios));
   // console.log(`Query: ${JSON.stringify(query)}`);
   const data: {
     id: string;

@@ -75,7 +75,12 @@ export default defineNuxtConfig({
   // ---
 
   runtimeConfig: {
-    crossApps: [
+    app: {},
+    nitro: {},
+    public: {},
+  },
+  appConfig: {
+    apps: [
       {
         id: "chrome",
         android: {
@@ -95,11 +100,7 @@ export default defineNuxtConfig({
         },
       },
     ],
-    app: {},
-    nitro: {},
-    public: {},
   },
-  appConfig: {},
   devServer: {},
   future: {
     compatibilityVersion: 4,
