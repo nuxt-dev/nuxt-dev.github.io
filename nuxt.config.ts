@@ -7,6 +7,11 @@ export default defineNuxtConfig({
 
   // ---
 
+  site: {
+    url: "https://example.com",
+    trailingSlash: true,
+  },
+
   devtools: {
     enabled: true,
   },
@@ -24,7 +29,7 @@ export default defineNuxtConfig({
   // ---
 
   plugins: [],
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxtjs/robots"],
+  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxtjs/sitemap", "nuxt-simple-robots"],
   eslint: {
     config: {
       stylistic: {
@@ -39,19 +44,22 @@ export default defineNuxtConfig({
     // provider: "static",
     // static: {},
   },
+  sitemap: {
+    exclude: [
+      "/app/**/privacy_policy", 
+      "/app/**/terms_of_use",
+    ],
+  },
   robots: {
-    // https://nuxt.com/modules/robots
-    rules: [
+    groups: [
       {
-        Comment: 'All robots allowed',
-      },
-      {
-        UserAgent: '*',
-        Disallow: '/*?*',
-        Allow: '/',
-      },
-      {
-        BlankLine: true,
+        comment: ["Allow all bots to crawl all content"],
+        userAgent:["*"],
+        disallow: [
+          "/app/**/privacy_policy", 
+          "/app/**/terms_of_use",
+        ],
+        allow: ["/"],
       },
     ],
   },
