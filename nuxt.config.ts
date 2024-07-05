@@ -59,7 +59,9 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   features: {},
-  experimental: {},
+  experimental: {
+    // payloadExtraction: true, // 决定是否生成 payload.json/payload.js
+  },
   generate: {
     // routes: [],
   },
