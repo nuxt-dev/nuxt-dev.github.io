@@ -6,6 +6,7 @@
     <AppFooter />
   </div>
 </template>
+
 <script setup lang="ts">
 useHead({
   title: "My Amazing Site",
