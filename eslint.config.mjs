@@ -5,7 +5,7 @@ export default withNuxt(
   // Your custom configs here
   {
     rules: {
-      // 'vue/no-v-html': 'off',
+      'vue/no-v-html': 'off',
       "no-case-declarations": "off",
       "vue/html-self-closing": [
         "error",
