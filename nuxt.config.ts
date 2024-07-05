@@ -45,14 +45,21 @@ export default defineNuxtConfig({
     // static: {},
   },
   sitemap: {
-    exclude: [],
+    exclude: [
+      "/app/*/privacy_policy",
+      "/app/*/terms_of_use",
+    ],
   },
   robots: {
     groups: [
       {
         comment: ["Allow all bots to crawl all content"],
         userAgent:["*"],
-        disallow: ["/*?*"],
+        disallow: [
+          "/*?*",
+          "/app/*/privacy_policy",
+          "/app/*/terms_of_use",
+        ],
         allow: ["/"],
       },
     ],
