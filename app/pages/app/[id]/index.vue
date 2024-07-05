@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ app?.title }}</h1>
+    <h1>App: {{ app?.title }}</h1>
 
     <NuxtLink :to="`/app/${route.params.id}/privacy_policy`">
       Privacy Policy
