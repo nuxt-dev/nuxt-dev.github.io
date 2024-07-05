@@ -2,6 +2,7 @@ import assert from "assert";
 import { z } from "zod";
 import appstore from "app-store-scraper";
 import googleplay from "google-play-scraper";
+import useMyApps from "~~/server/runtime/config";
 
 // const resp = await useFetch("/api/app/info?id=chrome");
 export default defineEventHandler(async (event) => {
@@ -18,16 +19,7 @@ export default defineEventHandler(async (event) => {
         }),
       ).parse,
   );
-  const appConfig = useAppConfig();
-  const myApps = appConfig.apps as {
-    id: string;
-    android?: { package_name: string };
-    ios?: { bundle_id: string };
-  }[];
-  assert(
-    myApps.every((app) => app.android || app.ios),
-    "Invalid APPS",
-  );
+  const myApps = useMyApps();
   const app = myApps.find((app) => app.id === query.id);
   assert(app, "Invalid ID");
   // console.log(`Query: ${JSON.stringify(query)}`);

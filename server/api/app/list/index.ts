@@ -1,7 +1,7 @@
-import assert from "assert";
 import { z } from "zod";
 import appstore from "app-store-scraper";
 import googleplay from "google-play-scraper";
+import useMyApps from "~~/server/runtime/config";
 
 // const resp = await useFetch("/api/app/list");
 // const resp = await useFetch("/api/app/list?platform=android");
@@ -20,16 +20,7 @@ export default defineEventHandler(async (event) => {
         }),
       ).parse,
   );
-  const appConfig = useAppConfig();
-  const myApps = appConfig.apps as {
-    id: string;
-    android?: { package_name: string };
-    ios?: { bundle_id: string };
-  }[];
-  assert(
-    myApps.every((app) => app.android || app.ios),
-    "Invalid APPS",
-  );
+  const myApps = useMyApps();
   const apps = myApps.filter((app) => !query.platform || (query.platform === "android" && app.android) || (query.platform === "ios" && app.ios));
   // console.log(`Query: ${JSON.stringify(query)}`);
   const data: {
