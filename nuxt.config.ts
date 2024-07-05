@@ -75,6 +75,26 @@ export default defineNuxtConfig({
   // ---
 
   runtimeConfig: {
+    crossApps: [
+      {
+        id: "chrome",
+        android: {
+          package_name: "com.android.chrome",
+        },
+        ios: {
+          bundle_id: "com.google.chrome.ios",
+        },
+      },
+      {
+        id: "firefox",
+        android: {
+          package_name: "org.mozilla.firefox",
+        },
+        ios: {
+          bundle_id: "org.mozilla.ios.Firefox",
+        },
+      },
+    ],
     app: {},
     nitro: {},
     public: {},
