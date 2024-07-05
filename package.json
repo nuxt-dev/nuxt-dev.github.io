@@ -32,13 +32,14 @@
     "license-checker": "license-checker --excludePrivatePackages --production --onlyAllow=\"ISC;BSD-3-Clause;BSD-2-Clause;MIT;Apache-2.0;0BSD;Python-2.0\""
   },
   "dependencies": {
+    "@nuxt/image": "^1.7.0",
     "nuxt": "^3.12.2",
+    "nuxt-og-image": "^3.0.0-rc.56",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.3.13",
-    "@nuxt/image": "^1.7.0",
     "@types/app-store-scraper": "file:packages/@types/app-store-scraper",
     "app-store-scraper": "^0.18.0",
     "cheerio": "^1.0.0-rc.12",

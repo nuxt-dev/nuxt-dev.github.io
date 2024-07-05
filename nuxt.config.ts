@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   // ---
 
   plugins: [],
-  modules: ["@nuxt/eslint", "@nuxt/image"],
+  modules: ["@nuxt/eslint", "@nuxt/image", "nuxt-og-image"],
   eslint: {
     config: {
       stylistic: {
