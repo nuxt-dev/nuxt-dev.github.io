@@ -1,6 +1,15 @@
 <template>
   <div>
     <h1>{{ app?.title }}</h1>
+
+    <NuxtLink :to="`/app/${route.params.id}/privacy_policy`">
+      Privacy Policy
+      <br />
+    </NuxtLink>
+    <NuxtLink :to="`/app/${route.params.id}/terms_of_use`">
+      Terms Of Use
+      <br />
+    </NuxtLink>
   </div>
 </template>
 
