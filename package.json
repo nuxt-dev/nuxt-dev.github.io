@@ -32,6 +32,8 @@
     "license-checker": "license-checker --excludePrivatePackages --production --onlyAllow=\"ISC;BSD-3-Clause;BSD-2-Clause;MIT;Apache-2.0;0BSD;Python-2.0\""
   },
   "dependencies": {
+    "@nuxt/icon": "^1.0.0",
+    "@nuxt/ui": "^2.17.0",
     "nuxt": "^3.12.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"

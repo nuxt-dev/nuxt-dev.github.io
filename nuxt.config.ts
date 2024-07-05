@@ -29,7 +29,14 @@ export default defineNuxtConfig({
   // ---
 
   plugins: [],
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxtjs/sitemap", "nuxt-simple-robots"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@nuxtjs/sitemap",
+    "nuxt-simple-robots",
+    "@nuxt/ui",
+    "@nuxt/icon"
+  ],
   eslint: {
     config: {
       stylistic: {
