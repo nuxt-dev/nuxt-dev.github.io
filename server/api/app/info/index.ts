@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
   );
   const myApps = useMyApps();
   const app = myApps.find((app) => app.id === query.id);
-  assert(app, "Invalid ID");
+  assert(app, "Invalid App ID");
   // console.log(`Query: ${JSON.stringify(query)}`);
   let data: {
     id: string;

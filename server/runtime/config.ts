@@ -9,7 +9,7 @@ export default function useMyApps() {
   }[];
   assert(
     myApps.every((app) => app.android || app.ios),
-    "Invalid APPS",
+    "Invalid Apps",
   );
   return myApps;
 }
