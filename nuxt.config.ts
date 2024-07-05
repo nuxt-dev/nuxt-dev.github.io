@@ -39,7 +39,22 @@ export default defineNuxtConfig({
     // provider: "static",
     // static: {},
   },
-  // robots: {},
+  robots: {
+    // https://nuxt.com/modules/robots
+    rules: [
+      {
+        Comment: 'All robots allowed',
+      },
+      {
+        UserAgent: '*',
+        Disallow: '/*?*',
+        Allow: '/',
+      },
+      {
+        BlankLine: true,
+      },
+    ],
+  },
 
   // ---
 

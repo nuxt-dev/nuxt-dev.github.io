@@ -8,7 +8,6 @@
 </template>
 
 <script setup lang="ts">
-const site = useSiteConfig();
 useHead({
   title: "My Amazing Site",
   meta: [{ name: "description", content: "This is the homepage" }],
