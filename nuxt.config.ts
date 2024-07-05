@@ -11,6 +11,8 @@ export default defineNuxtConfig({
     enabled: true,
   },
   app: {
+    // baseURL: "",
+    // cdnURL: "",
     head: {
       // htmlAttrs: {
       //   lang: "zh-CN",
