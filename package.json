@@ -32,20 +32,21 @@
     "license-checker": "license-checker --excludePrivatePackages --production --onlyAllow=\"ISC;BSD-3-Clause;BSD-2-Clause;MIT;Apache-2.0;0BSD;Python-2.0\""
   },
   "dependencies": {
-    "@nuxt/image": "^1.7.0",
-    "@nuxtjs/sitemap": "^5.3.2",
     "nuxt": "^3.12.2",
-    "nuxt-simple-robots": "^4.0.0-rc.19",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.3.13",
+    "@nuxt/image": "^1.7.0",
+    "@nuxtjs/color-mode": "^3.4.2",
+    "@nuxtjs/sitemap": "^5.3.2",
     "@types/app-store-scraper": "file:packages/@types/app-store-scraper",
     "app-store-scraper": "^0.18.0",
     "cheerio": "^1.0.0-rc.12",
     "google-play-scraper": "^10.0.0",
     "license-checker": "^25.0.1",
+    "nuxt-simple-robots": "^4.0.0-rc.19",
     "prettier": "^3.3.2",
     "typescript": "5.4.4",
     "vue-tsc": "^1.8.27",
