@@ -37,7 +37,7 @@ export default defineEventHandler(async (event) => {
       bundle_id: string;
       url: string;
     };
-  };
+  } | null = null;
   if (app.ios) {
     const info = await appstore.app({
       appId: app.ios.bundle_id,
@@ -91,8 +91,6 @@ export default defineEventHandler(async (event) => {
           .join("&")}`,
       },
     };
-  } else {
-    throw new Error("Invalid app");
   }
   // await event.respondWith(Response.json({ data: data }));
   return data;
