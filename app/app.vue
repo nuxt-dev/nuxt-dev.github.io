@@ -3,7 +3,7 @@
     <NuxtRouteAnnouncer />
     <!-- <NuxtWelcome /> -->
 
-    <NuxtLoadingIndicator />
+    <!-- <NuxtLoadingIndicator /> -->
 
     <NuxtLayout>
       <NuxtPage />

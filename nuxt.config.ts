@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   // ---
 
   site: {
-    url: "https://example.com",
+    url: "https://nuxt-dev.github.io",
     trailingSlash: true,
   },
 
