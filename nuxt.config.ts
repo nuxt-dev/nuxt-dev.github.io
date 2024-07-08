@@ -23,9 +23,9 @@ export default defineNuxtConfig({
       //   lang: "zh-CN",
       // },
       // titleTemplate: "%s - Nuxt.js",
-      link: [
-        { rel: "icon", type: "image/png", href: "/icon.png" },
-      ],
+      // link: [
+      //   { rel: "icon", type: "image/png", href: "/icon.png" },
+      // ],
     },
   },
 
@@ -34,11 +34,10 @@ export default defineNuxtConfig({
   plugins: [],
   modules: [
     "@nuxt/eslint",
+    "@nuxt/ui",
     "@nuxt/image",
     "@nuxtjs/sitemap",
     "nuxt-simple-robots",
-    "@nuxt/ui",
-    "@nuxt/icon",
   ],
   eslint: {
     config: {
@@ -90,7 +89,6 @@ export default defineNuxtConfig({
     public: {},
   },
   appConfig: {
-    nuxtIcon: {},
     apps: [
       {
         id: "chrome",
