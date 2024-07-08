@@ -89,6 +89,11 @@ export default defineNuxtConfig({
     public: {},
   },
   appConfig: {
+    ui: {
+      primary: "green",
+      gray: "cool",
+    },
+    nuxtIcon: {},
     apps: [
       {
         id: "chrome",

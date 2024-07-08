@@ -15,8 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import { ClientOnly } from '#build/components';
-
 // useHead({});
 // useSeoMeta({});
 </script>
