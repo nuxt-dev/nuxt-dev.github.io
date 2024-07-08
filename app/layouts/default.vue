@@ -9,7 +9,7 @@
 <script setup lang="ts">
 useHead({
   // title: "My Amazing Site",
-  titleTemplate: (title) => title ? `${title} | My Amazing Site` : "My Amazing Site",
+  titleTemplate: (title) => (title ? `${title} | My Amazing Site` : "My Amazing Site"),
   meta: [{ name: "description", content: "This is the homepage" }],
 });
 useSeoMeta({
