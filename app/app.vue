@@ -4,7 +4,6 @@
     <!-- <NuxtWelcome /> -->
 
     <!-- <NuxtLoadingIndicator /> -->
-
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

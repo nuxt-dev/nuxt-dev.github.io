@@ -90,6 +90,7 @@ export default defineNuxtConfig({
     public: {},
   },
   appConfig: {
+    nuxtIcon: {},
     apps: [
       {
         id: "chrome",
