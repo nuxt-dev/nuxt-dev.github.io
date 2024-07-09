@@ -1,3 +1,5 @@
+import pkg from './package.json'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // ---
@@ -49,6 +51,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  colorMode: {
+    preference: "system",
+    fallback: "light",
+  },
+  ui: {},
   image: {
     // provider: "static",
     // static: {},
@@ -86,7 +93,29 @@ export default defineNuxtConfig({
   runtimeConfig: {
     app: {},
     nitro: {},
-    public: {},
+    public: {
+      version: pkg.version,
+      apps: [
+        {
+          id: "chrome",
+          android: {
+            package_name: "com.android.chrome",
+          },
+          ios: {
+            bundle_id: "com.google.chrome.ios",
+          },
+        },
+        {
+          id: "firefox",
+          android: {
+            package_name: "org.mozilla.firefox",
+          },
+          ios: {
+            bundle_id: "org.mozilla.ios.Firefox",
+          },
+        },
+      ],
+    },
   },
   appConfig: {
     ui: {
@@ -94,26 +123,6 @@ export default defineNuxtConfig({
       gray: "cool",
     },
     nuxtIcon: {},
-    apps: [
-      {
-        id: "chrome",
-        android: {
-          package_name: "com.android.chrome",
-        },
-        ios: {
-          bundle_id: "com.google.chrome.ios",
-        },
-      },
-      {
-        id: "firefox",
-        android: {
-          package_name: "org.mozilla.firefox",
-        },
-        ios: {
-          bundle_id: "org.mozilla.ios.Firefox",
-        },
-      },
-    ],
   },
   devServer: {},
   future: {

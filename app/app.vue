@@ -9,6 +9,7 @@
     </NuxtLayout>
 
     <ClientOnly>
+      <UModals/>
       <UNotifications/>
     </ClientOnly>
   </div>

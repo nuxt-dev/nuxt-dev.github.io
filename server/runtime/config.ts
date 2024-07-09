@@ -1,8 +1,8 @@
 import assert from "assert";
 
 export default function useMyApps() {
-  const appConfig = useAppConfig();
-  const myApps = appConfig.apps as {
+  const runtimeConfig = useRuntimeConfig();
+  const myApps = runtimeConfig.public.apps as {
     id: string;
     android?: { package_name: string };
     ios?: { bundle_id: string };
